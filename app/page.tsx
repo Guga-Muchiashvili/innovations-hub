@@ -1,3 +1,14 @@
-export default function Home() {
-  return <div className="">Innovations hub</div>;
+"use client";
+
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+
+export default function Page() {
+  const router = useRouter();
+
+  useEffect(() => {
+    router.push("/Local");
+  }, [router]);
+
+  return null;
 }

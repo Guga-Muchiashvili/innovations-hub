@@ -55,12 +55,14 @@ export default {
           "4": "hsl(var(--chart-4))",
           "5": "hsl(var(--chart-5))",
         },
+        customPurple: "#2A296F",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],
         serif: ["Merriweather", "serif"],
         bebas: ["Bebas Neue", "sans-serif"],
         mono: ["Fira Code", "monospace"],
+        georgian: ["Noto Sans Georgian", "sans-serif"],
       },
       screens: {
         xs: "480px",
