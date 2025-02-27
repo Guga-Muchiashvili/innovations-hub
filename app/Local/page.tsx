@@ -1,7 +1,8 @@
+import LocalPage from "@/components/ProjectsComponent/ProjectsComponent";
 import React from "react";
 
-const LocalPage = () => {
-  return <div>LocalPage</div>;
+const page = () => {
+  return <LocalPage />;
 };
 
-export default LocalPage;
+export default page;

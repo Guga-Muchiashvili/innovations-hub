@@ -3,7 +3,7 @@ import "./globals.css";
 import NavBar from "@/common/components/NavBar";
 
 export const metadata: Metadata = {
-  title: "Innovations hub",
+  title: "Innovators hub",
   description: "place where you can find your dream project",
 };
 
