@@ -3,10 +3,12 @@ import React from "react";
 import exchangeImg from "../../../public/exchangephoto.png";
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
+import { useRouter } from "next/navigation";
 
 const ExchangeCardElement = () => {
+  const route = useRouter();
   return (
-    <div className="w-96 rounded-xl overflow-hidden relative border border-gray-300 bg-white shadow-lg">
+    <div className="w-[345] rounded-xl overflow-hidden relative border border-gray-300 bg-white shadow-lg">
       <div className="relative w-full h-48 overflow-hidden">
         <Image
           src={exchangeImg.src}
@@ -42,7 +44,10 @@ const ExchangeCardElement = () => {
       </div>
 
       <div className="absolute bottom-4 right-4 p-2 rounded-full bg-[#ADD8E6] h-10 w-10 flex items-center justify-center cursor-pointer shadow-md">
-        <MdKeyboardArrowRight className="text-white text-2xl" />
+        <MdKeyboardArrowRight
+          className="text-white text-2xl"
+          onClick={() => route.push("/Exchanges/543")}
+        />
       </div>
     </div>
   );
