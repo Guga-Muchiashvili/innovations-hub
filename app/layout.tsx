@@ -4,7 +4,7 @@ import NavBar from "@/common/components/NavBar";
 
 export const metadata: Metadata = {
   title: "Innovators hub",
-  description: "place where you can find your dream project",
+  description: "Place where you can find your dream project",
 };
 
 export default function RootLayout({
@@ -19,7 +19,7 @@ export default function RootLayout({
           <div className="w-80 h-full">
             <NavBar />
           </div>
-          {children}
+          <div className=""> {children}</div>
         </div>
       </body>
     </html>

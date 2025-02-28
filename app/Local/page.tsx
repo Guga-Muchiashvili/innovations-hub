@@ -1,4 +1,4 @@
-import LocalPage from "@/components/ProjectsComponent/ProjectsComponent";
+import LocalPage from "@/Plugins/LocalsPlugin/Components/LocalProjectPageComponent";
 import React from "react";
 
 const page = () => {

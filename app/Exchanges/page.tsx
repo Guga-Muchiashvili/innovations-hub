@@ -1,4 +1,4 @@
-import ExchangePage from "@/components/ExchangesComponent/ExchangesComponent";
+import ExchangePage from "@/Plugins/ExhangesPlugin/Components/ExchangesComponent";
 import React from "react";
 
 const page = () => {
