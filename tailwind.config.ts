@@ -57,6 +57,12 @@ export default {
           "5": "hsl(var(--chart-5))",
         },
         customPurple: "#2A296F",
+        color1: "",
+        color2: "#2A296F",
+        color3: "#190066",
+        color4: "",
+        color5: "#144B81",
+        color6: "#0D0C4B",
       },
       fontFamily: {
         sans: ["Inter", "Arial", "sans-serif"],

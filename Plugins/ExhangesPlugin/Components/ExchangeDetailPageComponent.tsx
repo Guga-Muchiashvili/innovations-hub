@@ -14,7 +14,7 @@ const ExchangeDetailComponent = () => {
     <div className="w-full h-screen px-10 py-9">
       <div
         className="w-fit h-fit flex items-center gap-8 text-customPurple cursor-pointer"
-        onClick={() => router.push("/Exchange")}
+        onClick={() => router.push("/Exchanges")}
       >
         <Image
           src="/logo.png"
