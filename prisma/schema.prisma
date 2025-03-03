@@ -1,0 +1,32 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = env("DATABASE_URL")
+}
+
+
+model ExchangeProject {
+  id       String   @id @default(auto()) @map("_id") @db.ObjectId
+  name     String
+  age      String
+  financeType String
+  moneyAmount String
+  period      String
+  sendingOrganisation String
+  hostingOrganisation String
+  formDedline         String
+  sendDate  String
+  backDate  String
+  registrationForm  String
+  description   String
+  images  String[]
+  country String
+  criteriums  String
+  ScolarshipDescription String
+  isNotSponsored  String
+  additionalInfo  String
+}
