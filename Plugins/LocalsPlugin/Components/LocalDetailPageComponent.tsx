@@ -1,93 +1,120 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import local from "../../../public/local.jpg";
 import { IoIosArrowDown } from "react-icons/io";
 import { useRouter } from "next/navigation";
+import local from "../../../public/local.jpg";
 
-const LocalDetailPage = () => {
+const ExchangeDetailComponent = () => {
   const images = [local.src, local.src, local.src];
+  const [currentIndex, setCurrentIndex] = useState(0);
   const router = useRouter();
 
+  const handlePrev = () => {
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
+  };
+
+  const handleNext = () => {
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
+  };
+
   return (
-    <div className="w-full h-screen px-10 py-9">
+    <div className="w-full min-h-screen px-2 lg:px-10 py-4 bg-gradient-to-b from-blue-50 to-white flex flex-col">
+      {/* Header */}
       <div
-        className="w-fit h-fit flex items-center gap-8 text-customPurple cursor-pointer"
-        onClick={() => router.push("/Local")}
+        className="flex items-center w-full gap-3 text-customPurple cursor-pointer mb-8"
+        onClick={() => router.push("/Exchanges")}
       >
         <Image
           src="/logo.png"
-          width={200}
-          height={200}
-          alt="img"
-          className="w-9 h-14"
+          width={50}
+          height={50}
+          alt="Logo"
+          className="w-10 h-14"
         />
-        <h1 className="text-xl font-extrabold">Innovators hub</h1>
+        <h1 className="text-xl font-bold">Innovators Hub</h1>
       </div>
 
-      <div className="w-full flex gap-12 mt-9">
-        <div className="w-[45%] relative">
+      {/* Main Layout */}
+      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  xl:max-w-[80vw] xl:h-[60vh] 2xl:max-w-[100vw]">
+        {/* Image Slider */}
+        <div className="col-span-6 relative shadow-xl rounded-xl overflow-hidden w-full 2xl:h-[20vw] 2xl:w-2/5 ">
           <Image
-            src={images[0]}
-            alt="img"
-            height={1000}
-            width={1000}
-            className="w-full h-[465px] rounded-xl"
+            src={images[currentIndex]}
+            alt="Exchange Program"
+            height={800}
+            width={800}
+            className="w-full h-full object-cover rounded-xl"
           />
-
-          <div className="absolute bottom-[0px] left-1/2 transform -translate-x-1/2 w-[120px] h-[50px] bg-white rounded-2xl flex justify-center rounded-b-none items-center space-x-4">
-            <button className="p-2 rounded-full bg-gray-200">
-              <FaChevronLeft size={16} />
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4">
+            <button
+              onClick={handlePrev}
+              className="p-3 bg-white shadow-lg rounded-full hover:bg-gray-200 transition"
+            >
+              <FaChevronLeft size={18} />
             </button>
-
-            <button className="p-2 rounded-full bg-gray-200">
-              <FaChevronRight size={16} />
+            <button
+              onClick={handleNext}
+              className="p-3 bg-white shadow-lg rounded-full hover:bg-gray-200 transition"
+            >
+              <FaChevronRight size={18} />
             </button>
           </div>
         </div>
 
-        <div className="pr-10 flex flex-col gap-5 w-1/2">
-          <h1 className="text-[#190066] text-[33px]">
-            გაცვლითი პროგრამა საქართველოში, sadw თბილისში
+        {/* Details Section */}
+        <div className="col-span-6 flex flex-col gap-3  md:gap-4 text-gray-800">
+          <h1 className="text-[#190066] text-xl md:text-4xl font-bold leading-tight">
+            გაცვლითი პროგრამა საქართველოში, თბილისში
           </h1>
-          <h1 className="text-[#144B81] text-2xl">ასაკი : 16+</h1>
-          <h1 className="text-[#144B81] text-2xl">დედლაინი : 05.02.2025</h1>
 
-          <h1 className="text-[#1E90FF] text-[22px] cursor-pointer">
+          <p className="text-[#144B81] text-lg font-semibold">
+            ორგანიზაცია: ორგანიზაცია
+          </p>
+          <p className="text-[#144B81] text-lg">ასაკი: 12-18</p>
+
+          <p className="text-[#144B81] text-lg">დედლაინი: 05.02.2025</p>
+
+          <button className="bg-blue-600 text-white text-lg font-semibold py-3 2xl:w-96 px-6 rounded-xl hover:bg-blue-700 transition shadow-lg">
             სარეგისტრაციო ფორმა
-          </h1>
+          </button>
         </div>
       </div>
 
-      <div className="text-[20px] font-medium text-[#144B81] mt-11">
-        თემატიკა: ეს გაცვლითი პროგრამა უზრუნველყოფს უნიკალურ შესაძლებლობას
-        სტუდენტებისთვის და პროფესიონალებისთვის, გაიღრმავონ ცოდნა და უნარები
-        კონკრეტულ სფეროში, როგორიცაა საერთაშორისო ურთიერთობები, გარემოს დაცვა ან
-        ბიზნეს მართვა. პროგრამა მოიცავს სასწავლო კურსებს, სემინარებს და
-        პრაქტიკულ გამოცდილებებს სხვადასხვა ქვეყანაში. მონაწილეები გაეცნობიან
-        ადგილობრივ კულტურას და განავითარებენ გლობალურ კავშირებს.
-      </div>
-      <div className="w-full flex flex-wrap gap-x-12 gap-y-7 mt-11 justify-center pb-5 text-[#144B81] font-semibold text-[20px]">
-        <div className="w-[48%] bg-[#F1F1F1] p-6 flex items-center justify-between rounded-xl">
-          <h1>კრიტერიუმებს :</h1>
-          <IoIosArrowDown />
+      {/* Description Section */}
+      <div className="flex 2xl:gap-12 flex-col 2xl:flex-row">
+        <div className="text-lg font-medium text-[#144B81] flex justify-start mt-12 leading-relaxed max-w-6xl xl:max-w-[100vw] 2xl:max-w-[40vw] text-left  mx-auto ">
+          <p className="">
+            ✨ თემატიკა: ეს გაცვლითი პროგრამა უზრუნველყოფს უნიკალურ
+            შესაძლებლობას სტუდენტებისთვის და პროფესიონალებისთვის, გაიღრმავონ
+            ცოდნა და უნარები კონკრეტულ სფეროში, როგორიცაა საერთაშორისო
+            ურთიერთობები, გარემოს დაცვა ან ბიზნეს მართვა. პროგრამა მოიცავს
+            სასწავლო კურსებს, სემინარებს და პრაქტიკულ გამოცდილებებს სხვადასხვა
+            ქვეყანაში. 🌍
+          </p>
         </div>
-        <div className="w-[48%] bg-[#F1F1F1] p-6 flex items-center justify-between rounded-xl">
-          <h1>დაფინანსების პაკეტი მოიცავს :</h1>
-          <IoIosArrowDown />
-        </div>
-        <div className="w-[48%] bg-[#F1F1F1] p-6 flex items-center justify-between rounded-xl">
-          <h1>არ ფინანსდება :</h1>
-          <IoIosArrowDown />
-        </div>
-        <div className="w-[48%] bg-[#F1F1F1] p-6 flex items-center justify-between rounded-xl">
-          <h1>დამატებითი მასალა :</h1>
-          <IoIosArrowDown />
+
+        {/* Information Sections */}
+        <div className="flex flex-wrap gap-8 mt-12 max-w-6xl justify-start 2xl:max-w-[60vw]  xl:max-w-[100vw]  mx-auto w-full">
+          {[
+            "კრიტერიუმებს",
+            "დაფინანსების პაკეტი მოიცავს",
+            "არ ფინანსდება",
+            "დამატებითი მასალა",
+          ].map((title, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 w-full lg:w-[48%] flex items-center justify-between rounded-xl  shadow-lg cursor-pointer hover:bg-blue-50 transition"
+            >
+              <h1 className="text-[#144B81] text-lg font-semibold">{title}</h1>
+              <IoIosArrowDown className="text-[#144B81]" size={24} />
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-export default LocalDetailPage;
+export default ExchangeDetailComponent;

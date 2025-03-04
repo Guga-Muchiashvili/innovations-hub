@@ -37,9 +37,9 @@ const ExchangeDetailComponent = () => {
       </div>
 
       {/* Main Layout */}
-      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  2xl:max-w-[100vw]">
+      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  xl:max-w-[80vw] xl:h-[60vh] 2xl:max-w-[100vw]">
         {/* Image Slider */}
-        <div className="col-span-6 relative shadow-xl rounded-xl overflow-hidden w-full 2xl:h-[20vw] 2xl:w-2/5 bg-red-300">
+        <div className="col-span-6 relative shadow-xl rounded-xl overflow-hidden w-full 2xl:h-[20vw] 2xl:w-2/5 ">
           <Image
             src={images[currentIndex]}
             alt="Exchange Program"
@@ -64,7 +64,7 @@ const ExchangeDetailComponent = () => {
         </div>
 
         {/* Details Section */}
-        <div className="col-span-6 flex flex-col gap-3 md:gap-6 text-gray-800">
+        <div className="col-span-6 flex flex-col gap-3 md:gap-5 text-gray-800">
           <h1 className="text-[#190066] text-xl md:text-4xl font-bold leading-tight">
             გაცვლითი პროგრამა საქართველოში, თბილისში
           </h1>
@@ -75,6 +75,7 @@ const ExchangeDetailComponent = () => {
             მასპინძელი ორგანიზაცია: ორგანიზაცია
           </p>
           <p className="text-[#144B81] text-lg">ქვეყანა: საქართველო</p>
+          <p className="text-[#144B81] text-lg">ასაკი: 12-18</p>
           <p className="text-[#144B81] text-lg">დედლაინი: 05.02.2025</p>
           <p className="text-[#144B81] text-lg">
             გამგზავრების თარიღი: 10.05.2025
