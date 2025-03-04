@@ -10,10 +10,7 @@ const LocalPage = () => {
         <FilterElement />
       </div>
       <div className="w-full flex pb-5 h-fit flex-wrap gap-4 justify-center overflow-hidden">
-        <div
-          className="w-full flex h-[calc(100vh-9rem)] flex-wrap gap-4 py-8 justify-center overflow-y-auto hide-scrollbar scroll-smooth"
-          id="localParentDiv"
-        >
+        <div className="w-full flex h-[calc(100vh-9rem)] flex-wrap gap-4 py-8 justify-center overflow-y-auto hide-scrollbar scroll-smooth">
           {Array.from({ length: 14 }).map((_, index) => (
             <LocalCardElement key={index} />
           ))}

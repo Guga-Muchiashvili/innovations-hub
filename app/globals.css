@@ -12,3 +12,27 @@ body {
 .hide-scrollbar::-webkit-scrollbar {
   display: none;
 }
+
+#localParentDiv {
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1));
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 1)
+  );
+  pointer-events: "none";
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.1),
+    rgba(255, 255, 255, 0)
+  );
+  pointer-events: none;
+}
