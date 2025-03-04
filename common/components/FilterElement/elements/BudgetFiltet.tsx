@@ -11,15 +11,13 @@ const BudgetSelector = ({
     "დაფინანსებული",
     "ნახევრად დაფინანსებული",
     "დაუფინანსებელი",
-  ]; // Age categories
+  ];
 
-  // Toggle age selection logic
   const toggleAgeSelection = (ageRange: string) => {
-    // Update the selected ages directly
     if (selectedBudget.includes(ageRange)) {
-      setselectedBudget(selectedBudget.filter((age) => age !== ageRange)); // Remove the age
+      setselectedBudget(selectedBudget.filter((age) => age !== ageRange));
     } else {
-      setselectedBudget([...selectedBudget, ageRange]); // Add the age
+      setselectedBudget([...selectedBudget, ageRange]);
     }
   };
 

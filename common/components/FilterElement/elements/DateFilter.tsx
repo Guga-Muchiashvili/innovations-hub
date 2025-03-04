@@ -7,15 +7,13 @@ const DatePeriodSelector = ({
   selectedPeriods: string[];
   setselectedPeriods: (ages: string[]) => void;
 }) => {
-  const ageRanges = ["ამ კვირაში", "ამ თვეში", "ამ სემესტრში", "ამ წელს"]; // Age categories
+  const ageRanges = ["ამ კვირაში", "ამ თვეში", "ამ სემესტრში", "ამ წელს"];
 
-  // Toggle age selection logic
   const toggleAgeSelection = (ageRange: string) => {
-    // Update the selected ages directly
     if (selectedPeriods.includes(ageRange)) {
-      setselectedPeriods(selectedPeriods.filter((age) => age !== ageRange)); // Remove the age
+      setselectedPeriods(selectedPeriods.filter((age) => age !== ageRange));
     } else {
-      setselectedPeriods([...selectedPeriods, ageRange]); // Add the age
+      setselectedPeriods([...selectedPeriods, ageRange]);
     }
   };
 

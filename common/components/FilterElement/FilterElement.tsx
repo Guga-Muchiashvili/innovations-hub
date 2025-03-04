@@ -42,24 +42,20 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
 
   console.log(country);
 
-  // Ref for the modal to detect clicks outside
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
-  // Close the dropdown if clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
         dropdownRef.current &&
         !dropdownRef.current.contains(event.target as Node)
       ) {
-        setOpenDropdown(null); // Close the dropdown if click is outside
+        setOpenDropdown(null);
       }
     };
 
-    // Add event listener to document for clicks
     document.addEventListener("mousedown", handleClickOutside);
 
-    // Clean up the event listener on component unmount
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

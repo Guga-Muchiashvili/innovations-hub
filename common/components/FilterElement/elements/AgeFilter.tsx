@@ -7,15 +7,14 @@ const MultiSelectAgeCategory = ({
   selectedAges: string[];
   setSelectedAges: (ages: string[]) => void;
 }) => {
-  const ageRanges = ["18-24", "25-34", "35-44", "45+"]; // Age categories
+  const ageRanges = ["18-24", "25-34", "35-44", "45+"];
 
-  // Toggle age selection logic
   const toggleAgeSelection = (ageRange: string) => {
     // Update the selected ages directly
     if (selectedAges.includes(ageRange)) {
-      setSelectedAges(selectedAges.filter((age) => age !== ageRange)); // Remove the age
+      setSelectedAges(selectedAges.filter((age) => age !== ageRange));
     } else {
-      setSelectedAges([...selectedAges, ageRange]); // Add the age
+      setSelectedAges([...selectedAges, ageRange]);
     }
   };
 
