@@ -9,3 +9,33 @@ export const NavRoutes = [
   { label: "უნივერსიტეტები", icon: MdSchool, route: "Universities" },
   { label: "მენტორი", icon: FaChalkboardTeacher, route: "Mentors" },
 ];
+
+export const filterElementsLocal = [
+  {
+    name: "ქვეყანა",
+    answers: [
+      "საქართველო",
+      "ესპანეთი",
+      "ინგლისი",
+      "ამერიკა",
+      "იტალია",
+      "საფრანგეთი",
+    ],
+  },
+  {
+    name: "ასაკი",
+    answers: ["0-12", "12-18", "18 - 35"],
+  },
+  {
+    name: "ორგანიზაცია",
+    answers: ["AISEC", "YCG", "ERASMUS"],
+  },
+  {
+    name: "თარიღი",
+    answers: ["მიმდინარე", "მომავალი", "მოკლე პერიოდი"],
+  },
+  {
+    name: "ბიუჯეტი",
+    answers: ["დაუფინანსებელი", "ნაწილობრივ", "დაფინანსებული"],
+  },
+];

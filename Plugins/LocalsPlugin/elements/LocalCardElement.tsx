@@ -9,6 +9,7 @@ import top from "../../../public/top.svg";
 
 const ExchangeCardElement = () => {
   const route = useRouter();
+
   return (
     <div className="w-[350px] sm:w-96 h-[339px] rounded-xl overflow-hidden relative border border-gray-300 bg-white shadow-lg group">
       <div className="relative w-full h-[80%] overflow-hidden transition-all duration-300 group-hover:h-[60%]">
