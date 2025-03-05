@@ -37,7 +37,7 @@ const ExchangeDetailComponent = () => {
       </div>
 
       {/* Main Layout */}
-      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  xl:max-w-[80vw] xl:h-[60vh] 2xl:max-w-[100vw]">
+      <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  xl:max-w-[80vw] xl:h-[45vh] 2xl:max-w-[100vw]">
         {/* Image Slider */}
         <div className="col-span-6 relative shadow-xl rounded-xl overflow-hidden w-full 2xl:h-[20vw] 2xl:w-2/5 ">
           <Image
