@@ -22,7 +22,7 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [searchQueryOrganisation, setSearchQueryOrganisation] = useState("");
 
-  const { control, getValues, watch } = useForm({
+  const { control, getValues } = useForm({
     resolver: yupResolver(FilterSchema(type)),
     defaultValues: {
       ...(type === "Local" ? { country: [] } : [""]),
@@ -37,10 +37,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
   const toggleDropdown = (field: string) => {
     setOpenDropdown((prev) => (prev === field ? null : field));
   };
-
-  const country = watch("country");
-
-  console.log(country);
 
   const dropdownRef = useRef<HTMLDivElement | null>(null);
 
@@ -60,8 +56,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  console.log(getValues());
 
   return (
     <div className="w-full flex flex-col items-center text-lg gap-7 h-fit justify-between text-color3 px-2 lg:px-0 py-4">

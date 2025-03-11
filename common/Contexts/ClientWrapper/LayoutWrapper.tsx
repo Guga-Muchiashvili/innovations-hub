@@ -15,11 +15,7 @@ export default function ClientWrapper({
 
   return (
     <div className="flex h-screen font-georgian">
-      {!hideNavBar && (
-        <div className="xl:w-80 h-full">
-          <NavBar />
-        </div>
-      )}
+      {!hideNavBar && <NavBar />}
       <div className="flex-1">{children}</div>
     </div>
   );

@@ -1,8 +1,18 @@
-import ExchangePage from "@/Plugins/ExhangesPlugin/Components/ExchangesComponent";
+"use client";
 import React from "react";
+import dynamic from "next/dynamic";
 
-const page = () => {
-  return <ExchangePage />;
+const ExchangePage = dynamic(
+  () => import("@/Plugins/ExhangesPlugin/Components/ExchangesComponent"),
+  { ssr: false }
+);
+
+const Page = () => {
+  return (
+    <div>
+      <ExchangePage />
+    </div>
+  );
 };
 
-export default page;
+export default Page;
