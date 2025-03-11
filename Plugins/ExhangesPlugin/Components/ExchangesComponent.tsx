@@ -12,7 +12,7 @@ const ExchangePage = () => {
   const markersRef = useRef<THREE.Object3D[]>([]);
 
   useEffect(() => {
-    if (typeof window === "undefined" || !globeRef.current) return; // Make sure this only runs in the browser
+    if (typeof window === "undefined" || !globeRef.current) return;
 
     const world = new Globe(globeRef.current)
       .globeImageUrl(
@@ -90,7 +90,7 @@ const ExchangePage = () => {
       scene.clear();
       markersRef.current = [];
     };
-  }, []); // Make sure this useEffect only runs once, after the first render
+  }, []);
 
   return (
     <div>
