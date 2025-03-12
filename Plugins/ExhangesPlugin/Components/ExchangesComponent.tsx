@@ -5,6 +5,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { exchangePrograms } from "@/common/constans";
 import { ExchangeProgram } from "@/common/types";
 import Globe from "globe.gl";
+import ScholarshipCard from "../elements/ExchangeCardElement";
 
 const ExchangePage = () => {
   const globeRef = useRef<HTMLDivElement>(null);
@@ -78,8 +79,6 @@ const ExchangePage = () => {
         if (clickedObject.userData) {
           setModalData(clickedObject.userData as ExchangeProgram);
         }
-      } else {
-        setModalData(null);
       }
     };
 
@@ -92,85 +91,47 @@ const ExchangePage = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (globeRef.current) {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        globeRef.current.style.width = `${width}px`;
+        globeRef.current.style.height = `${height}px`;
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <div>
       <div
         ref={globeRef}
-        style={{ width: "100%", height: "100vh", background: "black" }}
+        style={{
+          width: "100%",
+          height: "100vh",
+          background: "black",
+          position: "relative",
+        }}
       />
       {modalData && (
         <div
-          style={{
-            position: "fixed",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            padding: "20px",
-            backgroundColor: "white",
-            borderRadius: "10px",
-            boxShadow: "0 0 10px rgba(0, 0, 0, 0.5)",
-            zIndex: 9999,
-            maxHeight: "80vh",
-            overflowY: "auto",
-            width: "300px",
-          }}
+          className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center"
+          onClick={() => setModalData(null)}
         >
-          <h2>{modalData.name}</h2>
-          <p>
-            <strong>Age:</strong> {modalData.age || "N/A"}
-          </p>
-          <p>
-            <strong>Finance Type:</strong> {modalData.financeType || "N/A"}
-          </p>
-          <p>
-            <strong>Money Amount:</strong> {modalData.moneyAmount || "N/A"}
-          </p>
-          <p>
-            <strong>Period:</strong> {modalData.period || "N/A"}
-          </p>
-          <p>
-            <strong>Sending Organisation:</strong>{" "}
-            {modalData.sendingOrganisation || "N/A"}
-          </p>
-          <p>
-            <strong>Hosting Organisation:</strong>{" "}
-            {modalData.hostingOrganisation || "N/A"}
-          </p>
-          <p>
-            <strong>Form Deadline:</strong> {modalData.formDedline || "N/A"}
-          </p>
-          <p>
-            <strong>Send Date:</strong> {modalData.sendDate || "N/A"}
-          </p>
-          <p>
-            <strong>Back Date:</strong> {modalData.backDate || "N/A"}
-          </p>
-          <p>
-            <strong>Registration Form:</strong>{" "}
-            {modalData.registrationForm || "N/A"}
-          </p>
-          <p>
-            <strong>Description:</strong> {modalData.description || "N/A"}
-          </p>
-          <p>
-            <strong>Country:</strong> {modalData.country || "N/A"}
-          </p>
-          <p>
-            <strong>Criteriums:</strong> {modalData.criteriums || "N/A"}
-          </p>
-          <p>
-            <strong>Scholarship Description:</strong>{" "}
-            {modalData.ScolarshipDescription || "N/A"}
-          </p>
-          <p>
-            <strong>Is Not Sponsored:</strong>{" "}
-            {modalData.isNotSponsored ? "Yes" : "No"}
-          </p>
-          <p>
-            <strong>Additional Info:</strong>{" "}
-            {modalData.additionalInfo || "N/A"}
-          </p>
-          <button onClick={() => setModalData(null)}>Close</button>
+          <div
+            className="w-full md:w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <ScholarshipCard onClose={() => setModalData(null)} />
+          </div>
         </div>
       )}
     </div>
