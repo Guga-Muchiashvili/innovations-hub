@@ -92,7 +92,14 @@ const InfoItem = ({ icon, label, value, iconColor }: InfoItemProps) => {
     <div className={`${iconColor} flex gap-2 items-center`}>
       {renderIcon()}
       <span className="text-gray-700">
-        {label}: <strong>{value}</strong>
+        {label}:{" "}
+        {label == "გამშვები" ? (
+          <a href="Organisations/123" className="underline">
+            <strong>{value}</strong>
+          </a>
+        ) : (
+          <strong>{value}</strong>
+        )}
       </span>
     </div>
   );
@@ -107,7 +114,7 @@ export default function ScholarshipCard({ onClose }: { onClose: () => void }) {
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex justify-start items-center w-full md:w-[50%] left-0 absolute top-0 flex-col h-screen xl:w-[32%] bg-white p-1 md:p-2 lg:p-4 overflow-y-auto max-h-screen"
+      className="flex justify-start items-center w-full md:w-[50%] left-0 absolute top-0 flex-col h-screen xl:w-[32%] bg-white p-1 md:p-2 lg:p-4 overflow-y-auto max-h-screen hide-scrollbar"
     >
       <X
         className="absolute top-2 right-2 cursor-pointer"
