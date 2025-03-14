@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import half from "../../../public/half-sponsored.png";
 import top from "../../../public/top.svg";
 
-const ExchangeCardElement = () => {
+const LocalCardElement = () => {
   const route = useRouter();
 
   return (
@@ -68,4 +68,4 @@ const ExchangeCardElement = () => {
   );
 };
 
-export default ExchangeCardElement;
+export default LocalCardElement;

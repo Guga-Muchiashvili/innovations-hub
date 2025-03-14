@@ -4,14 +4,21 @@ import React from "react";
 import image from "../../../public/globeimg.png";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useRouter } from "next/navigation";
+import LocalCardElement from "@/Plugins/LocalsPlugin/elements/LocalCardElement";
+import { FiPhone } from "react-icons/fi";
+import { IoMailUnreadOutline } from "react-icons/io5";
+import { CiGlobe } from "react-icons/ci";
+import { IoLocation } from "react-icons/io5";
+import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 
 const OrganisationDetailPage = () => {
   const navigate = useRouter();
 
   return (
-    <div className="w-full min-h-screen">
+    <div className="w-full min-h-screen ">
       {/* Back Button & Text Section */}
-      <div className="flex flex-col xl:flex-row items-center xl:items-start xl:gap-6">
+      <div className="flex flex-col xl:flex-row items-center xl:items-start xl:gap-6 ">
         <div className="flex flex-col gap-11 w-full xl:w-2/5 md:px-12 px-1 py-2 md:py-16">
           {/* Back Button */}
           <MdKeyboardArrowLeft
@@ -37,7 +44,7 @@ const OrganisationDetailPage = () => {
             </p>
           </div>
           {/* Website Button */}
-          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-lg px-6 py-3 w-36">
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl px-6 py-3 w-36">
             ვებსაიტი
           </button>
         </div>
@@ -69,7 +76,55 @@ const OrganisationDetailPage = () => {
       </div>
 
       {/* Additional Content (Optional) */}
-      <div className="w-full h-screen bg-red-400 mt-10"></div>
+      <div className="w-full h-fit bg-[#d8f4f5]  p-12">
+        <div className="w-full flex justify-between">
+          <h1 className="text-[#37368A] text-4xl font-semibold">
+            ორგანიზაციის პროექტები
+          </h1>
+          <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 w-52 rounded-xl">
+            ნახე ყველა
+          </button>
+        </div>
+        <div className="w-full flex gap-5 mt-20  justify-center relative">
+          <MdOutlineKeyboardArrowLeft className="absolute top-1/2 translate-y-[-50%] text-5xl left-0 cursor-pointer" />
+          <MdOutlineKeyboardArrowRight className="absolute top-1/2 translate-y-[-50%] text-5xl right-0 cursor-pointer" />
+          <LocalCardElement />
+          <LocalCardElement />
+          <LocalCardElement />
+          <LocalCardElement />
+        </div>
+      </div>
+      <div className="w-full h-fit py-12  flex justify-center gap-12 px-12 relative">
+        <h1 className="text-xl text-gray-500 absolute top-5 left-12">
+          საკონტაქტო ინფორმაცია
+        </h1>
+        <div className="h-48  w-[550px] flex gap-16 px-6 bg-[#F6F6F6] rounded-xl justify-between items-center">
+          <div className="flex flex-col items-center w-1/2">
+            <FiPhone className="text-6xl" />
+            <h1 className="mt-6 ">ტელეფონის ნომერი</h1>
+            <h1 className="mt-1 text-[#5E5DAC] ">+995 555 00 26 46</h1>
+          </div>
+          <div className="flex flex-col items-center w-1/2">
+            <IoMailUnreadOutline className="text-6xl" />
+            <h1 className="mt-6 ">ელფოსტა</h1>
+            <h1 className="mt-1 text-[#5E5DAC] ">gugamucli22@gmail.com</h1>
+          </div>
+        </div>
+        <div className="h-48 w-[550px] flex gap-16 px-6 bg-[#F6F6F6] rounded-xl justify-between items-center">
+          <div className="flex flex-col items-center w-1/2">
+            <CiGlobe className="text-6xl" />
+            <h1 className="mt-6 ">ვებსაიტი</h1>
+            <h1 className="mt-1 text-[#5E5DAC] ">mydiva.shop</h1>
+          </div>
+          <div className="flex flex-col items-center w-1/2">
+            <IoLocation className="text-6xl" />
+            <h1 className="mt-6 ">ოფისის მისამართი</h1>
+            <h1 className="mt-1 text-center text-[#5E5DAC] ">
+              ვაზისუბნის დასახლება 17ა კორპუსი
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
