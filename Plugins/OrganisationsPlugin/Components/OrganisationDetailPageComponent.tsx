@@ -17,15 +17,12 @@ const OrganisationDetailPage = () => {
 
   return (
     <div className="w-full min-h-screen ">
-      {/* Back Button & Text Section */}
       <div className="flex flex-col xl:flex-row items-center xl:items-start xl:gap-6 ">
         <div className="flex flex-col gap-11 w-full xl:w-2/5 md:px-12 px-1 py-2 md:py-16">
-          {/* Back Button */}
           <MdKeyboardArrowLeft
             className="text-white w-12 h-12 bg-gray-300 rounded-full p-3 cursor-pointer"
             onClick={() => navigate.push("/Exchanges")}
           />
-          {/* Title & Description */}
           <div className="flex flex-col gap-7">
             <h1 className="text-3xl md:text-5xl text-[#488285] font-bold">
               Youth Center of Georgia
@@ -43,15 +40,12 @@ const OrganisationDetailPage = () => {
               რაც ახალგაზრდებს გლობალური კავშირების დამყარებაში ეხმარება.
             </p>
           </div>
-          {/* Website Button */}
           <button className="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl px-6 py-3 w-36">
             ვებსაიტი
           </button>
         </div>
 
-        {/* Image Section */}
         <div className="relative w-full xl:w-3/5 h-[65vh] xl:h-[70vh]">
-          {/* Background Image */}
           <Image
             src={image.src}
             alt="globe"
@@ -60,7 +54,6 @@ const OrganisationDetailPage = () => {
             className="w-full h-full object-cover"
           />
 
-          {/* Floating Cards */}
           <div className="absolute inset-0">
             <div className="absolute top-[20%] left-[5%] lg:left-[45%] xl:left-[2%] 2xl:left-[40%] bg-gray-200 rounded-xl shadow-lg w-40 h-56 md:w-52 md:h-72 flex items-center  xl:w-96 justify-center">
               📷
@@ -75,7 +68,6 @@ const OrganisationDetailPage = () => {
         </div>
       </div>
 
-      {/* Additional Content (Optional) */}
       <div className="w-full h-fit bg-[#d8f4f5]  p-12">
         <div className="w-full flex justify-between">
           <h1 className="text-[#37368A] text-4xl font-semibold">
