@@ -20,7 +20,6 @@ const MultiSelectAgeCategory = ({
 
   return (
     <div className="max-w-xl mx-auto bg-white shadow-lg rounded-xl p-5">
-      {/* Age Category List */}
       <div className="flex gap-4 justify-center flex-wrap">
         {ageRanges.map((ageRange) => (
           <div

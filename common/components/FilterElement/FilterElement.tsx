@@ -182,7 +182,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
                 )}
               </div>
 
-              {/* Organization */}
               <div className="relative">
                 <h1
                   className="flex items-center gap-2 cursor-pointer"
@@ -212,7 +211,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
                 )}
               </div>
 
-              {/* Date */}
               <div className="relative">
                 <h1
                   className="flex items-center gap-2 cursor-pointer"
@@ -262,9 +260,7 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
         </div>
       </div>
       <div className="w-full flex flex-col gap-4 mt-4">
-        {/* Display Selected Filters */}
         <div className="flex flex-wrap gap-3">
-          {/* Display Country */}
           {(getValues("country") || []).length > 0 && (
             <div className="flex items-center py-2 px-4 border border-gray-300 rounded-full">
               <span className="text-sm font-medium">Country:</span>
@@ -278,7 +274,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
               ))}
             </div>
           )}
-          {/* Display Age */}
           {(getValues("age") || [])?.length > 0 && (
             <div className="flex items-center py-2 px-4 border border-gray-300 rounded-full">
               <span className="text-sm font-medium">Age:</span>
@@ -293,7 +288,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
             </div>
           )}
 
-          {/* Display Organization */}
           {(getValues("organisation") || [])?.length > 0 && (
             <div className="flex items-center py-2 px-4 border border-gray-300 rounded-full">
               <span className="text-sm font-medium">Organization:</span>
@@ -308,7 +302,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
             </div>
           )}
 
-          {/* Display Date */}
           {(getValues("date") || [])?.length > 0 && (
             <div className="flex items-center py-2 px-4 border border-gray-300 rounded-full">
               <span className="text-sm font-medium">Date:</span>
@@ -323,7 +316,6 @@ const FilterElement = ({ type }: { type: "Local" | "Exchange" }) => {
             </div>
           )}
 
-          {/* Display Budget */}
           {(getValues("budget") || [])?.length > 0 && (
             <div className="flex items-center py-2 px-4 border border-gray-300 rounded-full">
               <span className="text-sm font-medium">Budget:</span>
