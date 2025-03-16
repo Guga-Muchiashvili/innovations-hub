@@ -5,6 +5,7 @@ import { BsClipboardData } from "react-icons/bs";
 import { FaUserEdit } from "react-icons/fa";
 import { MdOutlineFlight } from "react-icons/md";
 import { SiSololearn } from "react-icons/si";
+import Link from "next/link";
 
 type CardProps = {
   children: React.ReactNode;
@@ -77,7 +78,7 @@ export default function ScholarshipCard({ onClose }: { onClose: () => void }) {
           </div>
           <div className="w-full border-l-[2px] border-[#7A98B5]  px-6 text-[#053359] text-lg flex flex-col gap-3">
             <h1>
-              გამგზავნი : <a href="">Erasmus +</a>
+              გამგზავნი : <Link href="/Organisations/123">Erasmus +</Link>
             </h1>
             <h1>
               მიმღები : <a href="">Ados family</a>
