@@ -21,7 +21,6 @@ const ExchangeDetailComponent = () => {
 
   return (
     <div className="w-full min-h-screen px-2 lg:px-10 py-4 bg-gradient-to-b from-blue-50 to-white flex flex-col">
-      {/* Header */}
       <div
         className="flex items-center w-full gap-3 text-customPurple cursor-pointer mb-8"
         onClick={() => router.push("/Exchanges")}
@@ -36,9 +35,7 @@ const ExchangeDetailComponent = () => {
         <h1 className="text-xl font-bold">Innovators Hub</h1>
       </div>
 
-      {/* Main Layout */}
       <div className="flex flex-col lg:flex-row gap-12 max-w-7xl  xl:max-w-[80vw] xl:h-[45vh] 2xl:max-w-[100vw]">
-        {/* Image Slider */}
         <div className="col-span-6 relative shadow-xl rounded-xl overflow-hidden w-full 2xl:h-[20vw] 2xl:w-2/5 ">
           <Image
             src={images[currentIndex]}
@@ -63,7 +60,6 @@ const ExchangeDetailComponent = () => {
           </div>
         </div>
 
-        {/* Details Section */}
         <div className="col-span-6 flex flex-col gap-3  md:gap-4 text-gray-800">
           <h1 className="text-[#190066] text-xl md:text-4xl font-bold leading-tight">
             გაცვლითი პროგრამა საქართველოში, თბილისში
@@ -82,7 +78,6 @@ const ExchangeDetailComponent = () => {
         </div>
       </div>
 
-      {/* Description Section */}
       <div className="flex 2xl:gap-12 flex-col 2xl:flex-row">
         <div className="text-lg font-medium text-[#144B81] flex justify-start mt-12 leading-relaxed max-w-6xl xl:max-w-[100vw] 2xl:max-w-[40vw] text-left  mx-auto ">
           <p className="">
@@ -95,7 +90,6 @@ const ExchangeDetailComponent = () => {
           </p>
         </div>
 
-        {/* Information Sections */}
         <div className="flex flex-wrap gap-8 mt-12 max-w-6xl justify-start 2xl:max-w-[60vw]  xl:max-w-[100vw]  mx-auto w-full">
           {[
             "კრიტერიუმებს",
