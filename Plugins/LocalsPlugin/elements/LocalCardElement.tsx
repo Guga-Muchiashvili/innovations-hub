@@ -3,13 +3,10 @@ import React from "react";
 import localImg from "../../../public/local.jpg";
 import Image from "next/image";
 import { MdKeyboardArrowRight } from "react-icons/md";
-import { useRouter } from "next/navigation";
 import half from "../../../public/half-sponsored.png";
 import top from "../../../public/top.svg";
 
-const LocalCardElement = () => {
-  const route = useRouter();
-
+const LocalCardElement = ({ onClick }: { onClick: () => void }) => {
   return (
     <div className="w-[350px] sm:w-96 h-[339px] rounded-xl overflow-hidden relative border border-gray-300 bg-white shadow-lg group">
       <div className="relative w-full h-[80%] overflow-hidden transition-all duration-300 group-hover:h-[60%]">
@@ -58,7 +55,7 @@ const LocalCardElement = () => {
           <h1 className="text-color6 text-lg">ნაწილობრივი</h1>
           <div
             className=" bg-[#517DAE] text-white px-4 py-1 rounded-3xl items-center flex cursor-pointer"
-            onClick={() => route.push("/Local/543")}
+            onClick={() => onClick()}
           >
             მეტი <MdKeyboardArrowRight className="text-xl" />
           </div>
