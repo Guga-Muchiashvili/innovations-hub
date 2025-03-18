@@ -5,10 +5,6 @@ import image from "../../../public/globeimg.png";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { useRouter } from "next/navigation";
 import LocalCardElement from "@/Plugins/LocalsPlugin/elements/LocalCardElement";
-import { FiPhone } from "react-icons/fi";
-import { IoMailUnreadOutline } from "react-icons/io5";
-import { CiGlobe } from "react-icons/ci";
-import { IoLocation } from "react-icons/io5";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import photo from "../../../public/exchangephoto.png";
@@ -159,37 +155,6 @@ const OrganisationDetailPage = () => {
           <LocalCardElement onClick={() => toggleProjectModal()} />
           <LocalCardElement onClick={() => toggleProjectModal()} />
           <LocalCardElement onClick={() => toggleProjectModal()} />
-        </div>
-      </div>
-      <div className="w-full h-fit py-12  flex justify-center gap-12 px-12 relative">
-        <h1 className="text-xl text-gray-500 absolute top-5 left-12">
-          საკონტაქტო ინფორმაცია
-        </h1>
-        <div className="h-48  w-[550px] flex gap-16 px-6 bg-[#F6F6F6] rounded-xl justify-between items-center">
-          <div className="flex flex-col items-center w-1/2">
-            <FiPhone className="text-6xl" />
-            <h1 className="mt-6 ">ტელეფონის ნომერი</h1>
-            <h1 className="mt-1 text-[#5E5DAC] ">+995 555 00 26 46</h1>
-          </div>
-          <div className="flex flex-col items-center w-1/2">
-            <IoMailUnreadOutline className="text-6xl" />
-            <h1 className="mt-6 ">ელფოსტა</h1>
-            <h1 className="mt-1 text-[#5E5DAC] ">gugamucli22@gmail.com</h1>
-          </div>
-        </div>
-        <div className="h-48 w-[550px] flex gap-16 px-6 bg-[#F6F6F6] rounded-xl justify-between items-center">
-          <div className="flex flex-col items-center w-1/2">
-            <CiGlobe className="text-6xl" />
-            <h1 className="mt-6 ">ვებსაიტი</h1>
-            <h1 className="mt-1 text-[#5E5DAC] ">mydiva.shop</h1>
-          </div>
-          <div className="flex flex-col items-center w-1/2">
-            <IoLocation className="text-6xl" />
-            <h1 className="mt-6 ">ოფისის მისამართი</h1>
-            <h1 className="mt-1 text-center text-[#5E5DAC] ">
-              ვაზისუბნის დასახლება 17ა კორპუსი
-            </h1>
-          </div>
         </div>
       </div>
     </div>
