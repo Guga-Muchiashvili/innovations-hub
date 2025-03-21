@@ -6,6 +6,7 @@ import { exchangePrograms } from "@/common/constans";
 import { ExchangeProgram } from "@/common/types";
 import Globe from "globe.gl";
 import ScholarshipCard from "../elements/ExchangeCardElement";
+import earth from "../../../public/earth.jpg";
 
 const ExchangePage = () => {
   const globeRef = useRef<HTMLDivElement>(null);
@@ -16,9 +17,7 @@ const ExchangePage = () => {
     if (typeof window === "undefined" || !globeRef.current) return;
 
     const world = new Globe(globeRef.current)
-      .globeImageUrl(
-        "//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-      )
+      .globeImageUrl(earth.src)
       .hexPolygonResolution(3)
       .hexPolygonMargin(0.3)
       .backgroundColor("rgba(255, 255, 255, 0)");
