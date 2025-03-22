@@ -111,7 +111,6 @@ const OrganisationDetailPage = () => {
             <LocalCardElement onClick={() => toggleProjectModal()} />
             <LocalCardElement onClick={() => toggleProjectModal()} />
             <LocalCardElement onClick={() => toggleProjectModal()} />
-            <LocalCardElement onClick={() => toggleProjectModal()} />
           </div>
         </div>
       </div>
