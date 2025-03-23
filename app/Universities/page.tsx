@@ -1,7 +1,8 @@
+import UniversityComponent from "@/Plugins/UniPlugin/Components/UniComponent";
 import React from "react";
 
 const page = () => {
-  return <div>page</div>;
+  return <UniversityComponent />;
 };
 
 export default page;
