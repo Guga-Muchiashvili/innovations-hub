@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { exchangePrograms } from "@/common/constans";
@@ -9,7 +9,6 @@ import earth from "../../../public/earth.jpg";
 
 const UniversityComponent = () => {
   const globeRef = useRef<HTMLDivElement>(null);
-  const [modalData, setModalData] = useState<ExchangeProgram | null>(null);
   const markersRef = useRef<THREE.Object3D[]>([]);
 
   useEffect(() => {
@@ -75,7 +74,6 @@ const UniversityComponent = () => {
           clickedObject = clickedObject.parent;
         }
         if (clickedObject.userData) {
-          setModalData(clickedObject.userData as ExchangeProgram);
         }
       }
     };
@@ -119,17 +117,6 @@ const UniversityComponent = () => {
           position: "relative",
         }}
       />
-      {modalData && (
-        <div
-          className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center"
-          onClick={() => setModalData(null)}
-        >
-          <div
-            className="w-full md:w-full"
-            onClick={(e) => e.stopPropagation()}
-          ></div>
-        </div>
-      )}
     </div>
   );
 };
