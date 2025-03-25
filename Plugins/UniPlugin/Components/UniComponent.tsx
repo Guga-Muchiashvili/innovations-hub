@@ -1,15 +1,17 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { exchangePrograms } from "@/common/constans";
 import { ExchangeProgram } from "@/common/types";
 import Globe from "globe.gl";
 import earth from "../../../public/earth.jpg";
+import UniversityDetailCard from "../elements/UniversityCardElement";
 
 const UniversityComponent = () => {
   const globeRef = useRef<HTMLDivElement>(null);
   const markersRef = useRef<THREE.Object3D[]>([]);
+  const [modalData, setModalData] = useState<ExchangeProgram | null>(null);
 
   useEffect(() => {
     if (typeof window === "undefined" || !globeRef.current) return;
@@ -74,6 +76,7 @@ const UniversityComponent = () => {
           clickedObject = clickedObject.parent;
         }
         if (clickedObject.userData) {
+          setModalData(clickedObject.userData as ExchangeProgram);
         }
       }
     };
@@ -117,6 +120,19 @@ const UniversityComponent = () => {
           position: "relative",
         }}
       />
+      {modalData && (
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center"
+          onClick={() => setModalData(null)}
+        >
+          <div
+            className="w-full md:w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <UniversityDetailCard onClose={() => setModalData(null)} />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
