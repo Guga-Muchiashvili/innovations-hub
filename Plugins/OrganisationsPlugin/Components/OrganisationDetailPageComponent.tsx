@@ -37,7 +37,7 @@ const OrganisationDetailPage = () => {
   }, [showDetailProject]);
 
   return (
-    <div className="w-[99.1vw] min-h-screen">
+    <div className="w-[98.8vw] 2xl:w-[99.1vw] min-h-screen">
       {showDetailProject && (
         <ExchangeProjectModal toggleProjectModal={toggleProjectModal} />
       )}
@@ -70,7 +70,7 @@ const OrganisationDetailPage = () => {
           </button>
         </div>
 
-        <div className="relative w-full xl:w-3/5 h-[65vh] xl:h-full">
+        <div className="relative w-full xl:w-3/5 h-[65vh] xl:h-[90vh] 2xl:h-[70vh]">
           <Image
             src={image.src}
             alt="globe"
@@ -80,7 +80,7 @@ const OrganisationDetailPage = () => {
           />
 
           <div className="absolute inset-0">
-            <div className="absolute top-[20%] left-[5%] lg:left-[45%] xl:left-[2%] 2xl:left-[40%] bg-gray-200 rounded-xl shadow-lg w-40 h-56 md:w-52 md:h-72 flex items-center  xl:w-96 justify-center">
+            <div className="absolute top-[20%] left-[5%] lg:left-[45%] xl:left-[2%] 2xl:left-[20%] bg-gray-200 rounded-xl shadow-lg w-40 h-56 md:w-52 md:h-72 flex items-center  xl:w-96 justify-center">
               📷
             </div>
             <div className="absolute top-[2%] right-[12%] xl:right-[5%] bg-gray-200 rounded-xl shadow-lg w-36 h-52 md:w-48 md:h-64 flex items-center justify-center xl:w-80">
@@ -93,7 +93,7 @@ const OrganisationDetailPage = () => {
         </div>
       </div>
 
-      <div className="w-full h-[500px] bg-[#F6F6F6] p-2 lg:p-12 relative ">
+      <div className="w-full h-[500px]  p-2 lg:p-12 relative ">
         <div className="w-full flex justify-between flex-col md:flex-row gap-3">
           <h1 className="text-[#37368A] text-xl md:text-2xl lg:text-4xl font-semibold">
             ორგანიზაციის პროექტები

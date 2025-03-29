@@ -37,29 +37,48 @@ const UniversityComponent = () => {
     const mouse = new THREE.Vector2();
 
     const loader = new GLTFLoader();
-    loader.load("/location.glb", (gltf) => {
-      const markerModel = gltf.scene;
-      markerModel.scale.set(5, 5, 5);
 
-      exchangePrograms.forEach((program) => {
-        const { lat, lng } = program.location;
-        const { x, y, z } = world.getCoords(lat, lng);
+    setTimeout(() => {
+      loader.load("/location.glb", (gltf) => {
+        const markerModel = gltf.scene;
+        markerModel.scale.set(5, 5, 5);
 
-        const marker = markerModel.clone(true);
-        marker.position.set(x, y, z);
-        marker.lookAt(0, 0, 0);
+        exchangePrograms.forEach((program) => {
+          const { lat, lng } = program.location;
+          const { x, y, z } = world.getCoords(lat, lng);
 
-        marker.userData = program as ExchangeProgram;
+          const marker = markerModel.clone(true);
+          marker.position.set(x, y, z);
+          marker.lookAt(0, 0, 0);
 
-        marker.traverse((child: THREE.Object3D) => {
-          if ((child as THREE.Mesh).isMesh) {
-            child.userData = marker.userData;
-          }
+          marker.userData = program as ExchangeProgram;
+
+          marker.traverse((child: THREE.Object3D) => {
+            if ((child as THREE.Mesh).isMesh) {
+              child.userData = marker.userData;
+            }
+          });
+
+          scene.add(marker);
+          markersRef.current.push(marker);
         });
-        scene.add(marker);
-        markersRef.current.push(marker);
       });
-    });
+    }, 1000);
+
+    const handleMouseMove = (event: MouseEvent) => {
+      const rect = renderer.domElement.getBoundingClientRect();
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+      raycaster.setFromCamera(mouse, camera);
+      const intersects = raycaster.intersectObjects(markersRef.current, true);
+
+      if (intersects.length > 0) {
+        document.body.style.cursor = "pointer";
+      } else {
+        document.body.style.cursor = "default";
+      }
+    };
 
     const handleClick = (event: MouseEvent) => {
       const rect = renderer.domElement.getBoundingClientRect();
@@ -81,31 +100,15 @@ const UniversityComponent = () => {
       }
     };
 
+    window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("click", handleClick);
 
     return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("click", handleClick);
       scene.clear();
       markersRef.current = [];
-    };
-  }, []);
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (globeRef.current) {
-        const width = window.innerWidth;
-        const height = window.innerHeight;
-        globeRef.current.style.width = `${width}px`;
-        globeRef.current.style.height = `${height}px`;
-      }
-    };
-
-    window.addEventListener("resize", handleResize);
-
-    handleResize();
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
+      document.body.style.cursor = "default";
     };
   }, []);
 
