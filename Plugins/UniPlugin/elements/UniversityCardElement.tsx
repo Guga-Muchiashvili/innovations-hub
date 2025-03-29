@@ -50,7 +50,7 @@ export default function UniversityDetailCard({
       initial={{ opacity: 0, x: -220 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className="flex justify-start gap-10 items-center w-full md:w-[50%] left-0 absolute top-0 flex-col h-screen xl:w-[38%] bg-white p-3 py-8 md:p-2 lg:p-4 xl:pt-8 overflow-y-auto max-h-screen hide-scrollbar"
+      className="flex justify-start gap-10 items-center w-full md:w-[50%] left-0 absolute top-0 flex-col h-screen xl:w-[44%] bg-white p-3 py-8 md:p-2 lg:p-4 xl:pt-8 overflow-y-auto max-h-screen hide-scrollbar"
     >
       <X
         className="absolute top-1 right-2 cursor-pointer"
@@ -101,9 +101,16 @@ export default function UniversityDetailCard({
       </div>
       <div className="w-full flex items-center gap-6 flex-wrap justify-center">
         <div
-          className="relative w-full lg:w-[48%]"
+          className="relative w-full lg:w-[47%] cursor-pointer"
           onMouseEnter={() => setshowUniversityInformation(true)}
         >
+          {!showUniversityInformation && (
+            <div className="absolute inset-0 bg-black bg-opacity-20 flex items-center p-3 transition-opacity duration-300 rounded-xl text-white flex-col">
+              <h1 className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full text-center text-white text-xl">
+                ნახე პროექტის დეტალები
+              </h1>
+            </div>
+          )}
           <Image
             src={universityDetailImg.src}
             alt="universityImg"
@@ -112,24 +119,38 @@ export default function UniversityDetailCard({
             className="w-full"
           />
           {showUniversityInformation && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center flex-col gap-1 px-3 py-4 transition-opacity duration-300 rounded-xl text-white">
-              <h1 className="text-xl md:text-sm xl:text-xl w-full">
+            <motion.div
+              initial={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              className="absolute inset-0 bg-black bg-opacity-50 flex items-center flex-col gap-3 2xl:gap-3 md:gap-1 px-3 py-4 transition-opacity duration-300 rounded-xl text-white "
+            >
+              <h1 className=" w-full text-xl lg:text-sm 2xl:text-xl ">
                 პროგრამა : sustaible innovation and Environmental Managment
               </h1>
-              <h1 className=" w-full font-extralight mt-2">ქვეყანა : 3 თვე</h1>
-              <h1 className=" w-full font-extralight">
+              <h1 className=" w-full font-extralight mt-2 lg:mt-0 lg:text-[13px] xl:mt-2 2xl:text-base">
+                ქვეყანა : 3 თვე
+              </h1>
+              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-base">
                 პროგრამის ტიპი : გაცვლითი
               </h1>
-              <h1 className=" w-full font-extralight">
+              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-base">
                 რეგისტრაციის დედლაინი : 04.05.2025
               </h1>
-            </div>
+            </motion.div>
           )}
         </div>
         <div
-          className="relative w-full lg:w-[47%]"
+          className="relative w-full lg:w-[47%] cursor-pointer"
           onMouseEnter={() => setshowFlightInformation(true)}
         >
+          {!showFlightInformation && (
+            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-3 transition-opacity duration-300 rounded-xl text-white flex-col">
+              <h1 className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] w-full text-center text-white text-xl">
+                ნახე ფრენის დეტალები
+              </h1>
+            </div>
+          )}
           <Image
             src={flightDetailImg.src}
             alt="universityImg"
@@ -138,32 +159,41 @@ export default function UniversityDetailCard({
             className="w-full"
           />
           {showFlightInformation && (
-            <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-3 transition-opacity duration-300 rounded-xl text-white flex-col">
-              <h1 className="text-xl md:text-sm xl:text-xl w-full">
+            <motion.div
+              initial={{ opacity: 0.5 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.7 }}
+              className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-3 transition-opacity duration-300 rounded-xl text-white flex-col"
+            >
+              <h1 className="text-xl md:text-sm  2xl:text-xl w-full">
                 მოგზაურობის დეტალები
               </h1>
-              <h1 className="mt-2 w-full font-extralight">
+              <h1 className="mt-4 lg:mt-2 w-full lg:text-sm 2xl:text-base font-extralight">
                 ხანგრძლივობა : 3 თვე
               </h1>
-              <div className="flex items-center gap-3  mt-5 w-full">
-                <div className="flex flex-col gap-1 w-full">
-                  <h1 className="text-sm xl:text-xl w-full">24.05.2025</h1>
+              <div className="flex items-center gap-3 mt-5 lg:mt-2 xl:mt-3 2xl:mt-4 w-full">
+                <div className="flex flex-col gap-1 xl:gap-[1px] w-full">
+                  <h1 className="text-sm xl:text-lg 2xl:text-xl w-full">
+                    24.05.2025
+                  </h1>
                   <h1 className="md:text-[8px] text-xs w-full font-extralight xl:text-xs">
                     გამგზავრების თარიღი
                   </h1>
                 </div>
-                <div className="flex flex-col gap-1 w-full">
-                  <h1 className="text-sm xl:text-xl w-full">24.05.2025</h1>
+                <div className="flex flex-col gap-1 xl:gap-[1px] w-full ">
+                  <h1 className="text-sm xl:text-lg 2xl:text-xl w-full">
+                    24.05.2025
+                  </h1>
                   <h1 className="md:text-[8px] text-xs w-full xl:text-xs font-extralight">
                     გამგზავრების თარიღი
                   </h1>
                 </div>
               </div>
-              <div className="mt-5 flex flex-col gap-2 text-[15px] w-full font-light">
+              <div className="mt-5 lg:mt-2 xl:mt-4 flex flex-col gap-2 lg:gap-1 2xl:gap-2 2xl:mt-5 text-[15px] w-full font-light lg:text-xs">
                 <h1 className="">დაფინანსება : ნაწილობრივი</h1>
                 <h1>საფასური : 200$</h1>
               </div>
-            </div>
+            </motion.div>
           )}
         </div>
       </div>
