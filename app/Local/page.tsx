@@ -1,8 +1,13 @@
-import LocalPage from "@/Plugins/LocalsPlugin/Components/LocalProjectPageComponent";
+"use client";
+import dynamic from "next/dynamic";
 import React from "react";
 
-const page = () => {
+const LocalPage = dynamic(
+  () => import("@/Plugins/LocalsPlugin/Components/LocalProjectPageComponent"),
+  { ssr: false }
+);
+const Page = () => {
   return <LocalPage />;
 };
 
-export default page;
+export default Page;

@@ -11,7 +11,7 @@ const NavBar = () => {
   const [showNavbar, setShowNavbar] = useState(true);
 
   return showNavbar ? (
-    <div className="py-3 rounded-t-2xl w-full z-50 md:pl-8 md:pr-8 md:w-fit md:left-1/2 md:translate-x-[-50%] fixed bottom-0 left-0 bg-white shadow-md md:flex md:justify-center md:gap-8">
+    <div className="py-3 rounded-t-2xl w-full z-[1000] md:pl-8 md:pr-8 md:w-fit md:left-1/2 md:translate-x-[-50%]  fixed bottom-0 left-0 bg-white shadow-md md:flex md:justify-center md:gap-8">
       <div className="absolute left-1/2 translate-x-[-50%] top-0 flex items-center justify-center w-10 h-7 bg-[#616161] rounded-b-full">
         <IoIosArrowDropdownCircle
           className=" text-white text-2xl cursor-pointer"

@@ -38,7 +38,6 @@ const ExchangePage = () => {
 
     const loader = new GLTFLoader();
 
-    // Wait for the globe to render before adding markers
     setTimeout(() => {
       loader.load("/location.glb", (gltf) => {
         const markerModel = gltf.scene;
