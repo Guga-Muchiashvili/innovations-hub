@@ -86,7 +86,7 @@ export default function UniversityDetailCard({
             </button>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-[30%] md:w-[45%] z-30  rounded-tr-3xl h-10 lg:h-14 bg-white flex items-center justify-between px-3 lg:px-8">
+        <div className="absolute bottom-[-1px] left-0 w-[30%] md:w-[45%] z-30 2xl:w-[30%]  rounded-tr-3xl h-10 lg:h-14 bg-white flex items-center justify-between px-3 lg:px-8">
           <MdOutlineMailOutline className="text-xl lg:text-4xl cursor-pointer py-[1px]" />
           <TfiLocationPin className="text-xl lg:text-4xl cursor-pointer py-[1px]" />
           <BsTelephone className="text-xl lg:text-4xl cursor-pointer py-[1px]" />
@@ -125,11 +125,11 @@ export default function UniversityDetailCard({
               transition={{ duration: 0.7 }}
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center flex-col gap-3 2xl:gap-3 md:gap-1 px-3 py-4 transition-opacity duration-300 rounded-xl text-white "
             >
-              <h1 className=" w-full text-xl lg:text-sm 2xl:text-xl ">
-                პროგრამა : sustaible innovation and Environmental Managment
+              <h1 className=" w-full text-xl lg:text-sm 2xl:text-xl xl:text-lg ">
+                პროგრამის დეტალები
               </h1>
-              <h1 className=" w-full font-extralight mt-2 lg:mt-0 lg:text-[13px] xl:mt-2 2xl:text-base">
-                ქვეყანა : 3 თვე
+              <h1 className=" w-full font-extralight mt-2 lg:mt-2 lg:text-[13px] xl:mt-2 2xl:text-base">
+                ქვეყანა : დიდი ბრიტანეთი
               </h1>
               <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-base">
                 პროგრამის ტიპი : გაცვლითი
@@ -165,7 +165,7 @@ export default function UniversityDetailCard({
               transition={{ duration: 0.7 }}
               className="absolute inset-0 bg-black bg-opacity-50 flex items-center p-3 transition-opacity duration-300 rounded-xl text-white flex-col"
             >
-              <h1 className="text-xl md:text-sm  2xl:text-xl w-full">
+              <h1 className="text-xl md:text-sm  2xl:text-xl w-full ">
                 მოგზაურობის დეტალები
               </h1>
               <h1 className="mt-4 lg:mt-2 w-full lg:text-sm 2xl:text-base font-extralight">
@@ -189,7 +189,7 @@ export default function UniversityDetailCard({
                   </h1>
                 </div>
               </div>
-              <div className="mt-5 lg:mt-2 xl:mt-4 flex flex-col gap-2 lg:gap-1 2xl:gap-2 2xl:mt-5 text-[15px] w-full font-light lg:text-xs">
+              <div className="mt-5 lg:mt-2 xl:mt-4 flex flex-col gap-2 lg:gap-1 2xl:gap-2 2xl:mt-5 text-[15px] w-full font-light lg:text-xs 2xl:text-base">
                 <h1 className="">დაფინანსება : ნაწილობრივი</h1>
                 <h1>საფასური : 200$</h1>
               </div>

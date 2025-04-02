@@ -143,7 +143,7 @@ const ExchangePage = () => {
       />
       {modalData && (
         <div
-          className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex justify-center items-center"
+          className="absolute top-0 left-0 w-full h-full bg-black  bg-opacity-50 z-[1000000] flex justify-center items-center"
           onClick={() => setModalData(null)}
         >
           <div

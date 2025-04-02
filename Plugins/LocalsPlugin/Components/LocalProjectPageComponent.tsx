@@ -4,7 +4,7 @@ import L, { LatLngBoundsLiteral } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { exchangePrograms } from "@/common/constans";
 import { ExchangeProgram } from "@/common/types";
-import ScholarshipCard from "@/Plugins/ExhangesPlugin/elements/ExchangeCardElement";
+import LocalDetailCard from "../elements/LocalCardElement";
 
 const LocalPage = () => {
   const mapRef = useRef<HTMLDivElement>(null);
@@ -51,7 +51,7 @@ const LocalPage = () => {
         icon: customIcon,
       }).addTo(map);
 
-      marker.bindPopup(`<b>${program.name}</b>`).on("click", () => {
+      marker.on("click", () => {
         setModalData(program);
       });
     });
@@ -72,14 +72,14 @@ const LocalPage = () => {
       />
       {modalData && (
         <div
-          className="absolute top-0 left-0 w-full h-full bg-white bg-opacity-50 flex justify-center items-center"
+          className="absolute top-0 left-0 w-full h-full bg-black  bg-opacity-50 z-[1000000] flex justify-center items-center"
           onClick={() => setModalData(null)}
         >
           <div
             className="w-full md:w-full"
             onClick={(e) => e.stopPropagation()}
           >
-            <ScholarshipCard onClose={() => setModalData(null)} />
+            <LocalDetailCard onClose={() => setModalData(null)} />
           </div>
         </div>
       )}
