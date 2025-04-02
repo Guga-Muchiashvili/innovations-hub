@@ -119,21 +119,21 @@ export default function ScholarshipCard({ onClose }: { onClose: () => void }) {
               initial={{ opacity: 0.5 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7 }}
-              className="absolute inset-0 bg-black bg-opacity-50 flex items-center flex-col gap-3 2xl:gap-3 md:gap-1 px-3 py-3 transition-opacity duration-300 rounded-xl text-white "
+              className="absolute inset-0 bg-black bg-opacity-50 flex items-center flex-col gap-3 2xl:gap-2 md:gap-1 px-3 py-3 transition-opacity duration-300 rounded-xl text-white "
             >
               <h1 className=" w-full text-xl lg:text-sm xl:text-lg 2xl:text-xl ">
                 გაცვლითის დეტალები
               </h1>
-              <h1 className=" w-full font-extralight mt-2 lg:mt-0 lg:text-[13px] xl:mt-2 2xl:text-lg">
+              <h1 className=" w-full font-extralight mt-2 lg:mt-0 lg:text-[13px] xl:mt-2 2xl:text-lg 2xl:font-light">
                 ქვეყანა : რუმინეთი
               </h1>
-              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg">
+              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg 2xl:font-light">
                 ასაკი : 18+
               </h1>
-              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg">
+              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg 2xl:font-light">
                 მასპინძელი ორგ : Ados Family
               </h1>
-              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg">
+              <h1 className=" w-full font-extralight lg:text-[13px] 2xl:text-lg 2xl:font-light">
                 გამგზავნი ორგ : youth Center of Georgia
               </h1>
             </motion.div>
