@@ -4,7 +4,7 @@ import L, { LatLngBoundsLiteral } from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { exchangePrograms } from "@/common/constans";
 import { ExchangeProgram } from "@/common/types";
-import LocalDetailCard from "../elements/LocalCardElement";
+import LocalDetailCard from "../elements/LocalCardDetailModal";
 
 const LocalPage = () => {
   const mapRef = useRef<HTMLDivElement>(null);
