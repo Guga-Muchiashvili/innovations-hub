@@ -1,7 +1,7 @@
 import React from "react";
 
 const ExchangeFilter = () => {
-  return <div>ExchangeFilter</div>;
+  return <div></div>;
 };
 
 export default ExchangeFilter;
